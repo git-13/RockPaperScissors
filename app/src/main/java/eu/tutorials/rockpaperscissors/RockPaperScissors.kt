@@ -3,8 +3,19 @@ package eu.tutorials.rockpaperscissors
 fun main(){
     var ComputerChoise = ""
     var UserChoise = ""
-    println("Choose: Rock, Paper or Scissors")
-    UserChoise = readln()
+
+    while (true){
+        println("Choose: Rock, Paper, or Scissors")
+        UserChoise = readln()
+        if (UserChoise == "Rock"||UserChoise=="Paper"||UserChoise=="Scissors"){
+           break
+        }else{
+            println("Invalid input, please enter correct value: Rock or Paper or Scissors")
+        }
+
+    }
+
+
 
     val RandomNumber= (1..3).random()
     when (RandomNumber) {
@@ -27,6 +38,7 @@ fun main(){
         UserChoise == "Scissors" && ComputerChoise == "Paper" -> "Player"
         else -> "Computer"
     }
+
     if(winner == "Tie"){
         println("It's a tie")
     }else{
